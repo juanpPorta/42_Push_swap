@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/16 18:48:10 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/16 19:00:22 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,11 @@ int	main(int argc, char **argv)
 	t_push	push;
 
 	ft_save(&push, argv, argc);
-	push.a = argv;
-	if (argc < 0)
+	push.a = ft_split(argv[1], ' ');
+	if (argc <= 0)
 		return (0);
+	i = -1;
+	while (push.a[i])
+		printf("push: %s\n", push.a[++i]);
 	return (0);
 }
