@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:56:47 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/16 17:46:57 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/17 16:33:11 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,19 @@ typedef struct s_push
 	char	**a;
 	char	**b;
 	char	**save;
+	int		ya;
+	int		xa;
+	int		yt;
+	int		xt;
 
 }		t_push;
 
 void	ft_sa(t_push push);
 void	ft_sb(t_push push);
 char	**ft_checkargv(char **argv, t_push *push);
+int		ft_countmal(char **argv);
+char	**ft_malloc(char **mal, int count);
+void	ft_save(t_push *push, char **argv, int argc);
+size_t	ft_takesize(char **argv);
+void	ft_free(char **matrix);
 #endif

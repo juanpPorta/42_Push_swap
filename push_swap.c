@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/16 19:00:22 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/17 16:48:01 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,46 +19,26 @@ void	ft_init(t_push *push)
 	push->a = NULL;
 }
 
-int	ft_countmal(char **argv)
+void	ft_Stoa(char **argv, t_push *push)
 {
-	int	y;
-	int	x;
-	int	count;
+	char	**temp;
+	int		y;
+	int		x;
 
 	y = 0;
-	count = 0;
+	push->ya = 0;
 	while (argv[++y])
 	{
-		x = -1;
-		while (argv[y][++x])
-		{	
-			if (argv[y][x] != ' ' && argv[y][x] != '\0')
-				count++;
+		temp = ft_split(argv[y], ' ');
+		push->yt = -1;
+		while (temp[++push->yt])
+		{
+			push->a[push->ya]
+				= ft_strdup(temp[push->yt]);
+			push->ya += 1;
 		}
+		ft_free(temp);
 	}
-	return (count);
-}
-
-void	ft_malloc(char **mal, int count)
-{
-	int	y;
-	int	x;
-
-	y = -1;
-	mal = malloc(sizeof(int) * count);
-	while (++y <= count)
-	{
-		mal[y] = malloc(sizeof(int) * count);
-	}
-}
-
-void	ft_save(t_push *push, char **argv, int argc)
-{	
-	int	count;
-
-	count = 0;
-	count = ft_countmal(argv);
-	ft_malloc(push->a, count);
 }
 
 int	main(int argc, char **argv)
@@ -67,11 +47,11 @@ int	main(int argc, char **argv)
 	t_push	push;
 
 	ft_save(&push, argv, argc);
-	push.a = ft_split(argv[1], ' ');
+	ft_Stoa(argv, &push);
 	if (argc <= 0)
 		return (0);
 	i = -1;
-	while (push.a[i])
-		printf("push: %s\n", push.a[++i]);
+	while (push.a[++i] < ft_countmal(argv))
+		printf("push: %s\n", push.a[i]);
 	return (0);
 }
