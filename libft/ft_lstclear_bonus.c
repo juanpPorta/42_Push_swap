@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_s.c                                             :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 19:45:37 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 19:31:41 by jporta           ###   ########.fr       */
+/*   Created: 2021/09/21 13:59:43 by marvin            #+#    #+#             */
+/*   Updated: 2021/09/22 18:42:44 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	ft_sb(t_push push)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char	*temp;
+	t_list	*aux;
 
-	temp = 0;
-	temp = push.b[0];
-	push.b[0] = push.b[1];
-	push.b[1] = temp;
-	printf("sb\n");
-}
-
-void	ft_sa(t_push push)
-{
-	char	*temp;
-
-	temp = 0;
-	temp = push.a[0];
-	push.a[0] = push.a[1];
-	push.a[1] = temp;
-	printf("sa\n");
+	if (!*lst)
+		return ;
+	while (*lst)
+	{
+		aux = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = aux;
+	}
+	*lst = NULL;
 }

@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_s.c                                             :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 19:45:37 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 19:31:41 by jporta           ###   ########.fr       */
+/*   Created: 2021/09/17 13:54:20 by marvin            #+#    #+#             */
+/*   Updated: 2021/09/22 19:00:50 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	ft_sb(t_push push)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*temp;
+	size_t	i;
 
-	temp = 0;
-	temp = push.b[0];
-	push.b[0] = push.b[1];
-	push.b[1] = temp;
-	printf("sb\n");
-}
-
-void	ft_sa(t_push push)
-{
-	char	*temp;
-
-	temp = 0;
-	temp = push.a[0];
-	push.a[0] = push.a[1];
-	push.a[1] = temp;
-	printf("sa\n");
+	if (!s1 || !set)
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }

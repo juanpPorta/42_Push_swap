@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_s.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 19:45:37 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 19:31:41 by jporta           ###   ########.fr       */
+/*   Created: 2021/09/17 15:34:24 by marvin            #+#    #+#             */
+/*   Updated: 2021/09/22 18:45:57 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	ft_sb(t_push push)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*temp;
+	size_t	i;
 
-	temp = 0;
-	temp = push.b[0];
-	push.b[0] = push.b[1];
-	push.b[1] = temp;
-	printf("sb\n");
-}
-
-void	ft_sa(t_push push)
-{
-	char	*temp;
-
-	temp = 0;
-	temp = push.a[0];
-	push.a[0] = push.a[1];
-	push.a[1] = temp;
-	printf("sa\n");
+	i = 0;
+	if (s)
+	{
+		while (*s && *f)
+		{
+			(*f)(i, s);
+			s++;
+			i++;
+		}
+	}
 }

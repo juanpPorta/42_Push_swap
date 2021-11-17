@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_s.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 19:45:37 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 19:31:41 by jporta           ###   ########.fr       */
+/*   Created: 2021/11/02 16:12:02 by jporta            #+#    #+#             */
+/*   Updated: 2021/11/03 17:35:46 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	ft_sb(t_push push)
+int	ft_putstr(char *str)
 {
-	char	*temp;
+	int	cont;
+	int	i;
 
-	temp = 0;
-	temp = push.b[0];
-	push.b[0] = push.b[1];
-	push.b[1] = temp;
-	printf("sb\n");
-}
-
-void	ft_sa(t_push push)
-{
-	char	*temp;
-
-	temp = 0;
-	temp = push.a[0];
-	push.a[0] = push.a[1];
-	push.a[1] = temp;
-	printf("sa\n");
+	cont = 0;
+	i = 0;
+	if (str == 0)
+	{
+		write (1, "(", 1);
+		write (1, "n", 1);
+		write (1, "u", 1);
+		write (1, "l", 1);
+		write (1, "l", 1);
+		write (1, ")", 1);
+		return (6);
+	}
+	while (str[i] != '\0')
+	{
+		cont += write(1, &str[i], 1);
+		i++;
+	}
+	return (cont);
 }

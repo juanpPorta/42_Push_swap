@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_s.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 19:45:37 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 19:31:41 by jporta           ###   ########.fr       */
+/*   Created: 2021/09/15 13:02:46 by marvin            #+#    #+#             */
+/*   Updated: 2021/11/02 17:04:50 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	ft_sb(t_push push)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	char	*temp;
+	size_t	a;
+	size_t	b;
 
-	temp = 0;
-	temp = push.b[0];
-	push.b[0] = push.b[1];
-	push.b[1] = temp;
-	printf("sb\n");
-}
-
-void	ft_sa(t_push push)
-{
-	char	*temp;
-
-	temp = 0;
-	temp = push.a[0];
-	push.a[0] = push.a[1];
-	push.a[1] = temp;
-	printf("sa\n");
+	if (size <= ft_strlen(dest))
+		return (size + ft_strlen(src));
+	a = ft_strlen(dest);
+	b = 0;
+	while (src[b] != '\0' && a + 1 < size)
+	{
+		dest[a] = src[b];
+		a++;
+		b++;
+	}
+	dest[a] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[b]));
 }

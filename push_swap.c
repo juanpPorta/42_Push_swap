@@ -52,8 +52,8 @@ int	main(int argc, char **argv)
 	ft_save(&push, argv, argc);
 	ft_Stoa(argv, &push);
 	ft_takeints(&push);
+	push_swap(&push);
 	i = -1;
-	printf("%i", ft_countmal(argv));
 	while (++i <= ft_countmal(argv) && push.a[i])
 		printf("push: %s\n", push.a[i]);
 	return (0);
