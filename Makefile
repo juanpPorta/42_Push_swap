@@ -3,7 +3,8 @@ NAME	= push_swap
 MINILIB	= ./libft/libft.a
 HEADER	= push_swap.h
 OBJS	= $(SRCS:.c=.o)
-SRCS	= push_swap.c ./movements/ft_s.c push_utils.c ft_free.c
+SRCS	= push_swap.c ./movements/ft_s.c push_utils.c ft_free.c \
+			parshe.c
 
 all:	$(NAME)
 

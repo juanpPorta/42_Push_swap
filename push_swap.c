@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 16:48:01 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/17 17:36:07 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_init(t_push *push)
 {
-	push = NULL;
-	push->a = NULL;
-	push->a = NULL;
+	push->ya = 0;
+	push->xa = 0;
+	push->yt = 0;
+	push->xt = 0;
 }
 
 void	ft_Stoa(char **argv, t_push *push)
@@ -46,12 +47,14 @@ int	main(int argc, char **argv)
 	int		i;
 	t_push	push;
 
-	ft_save(&push, argv, argc);
-	ft_Stoa(argv, &push);
 	if (argc <= 0)
 		return (0);
+	ft_save(&push, argv, argc);
+	ft_Stoa(argv, &push);
+	ft_takeints(&push);
 	i = -1;
-	while (push.a[++i] < ft_countmal(argv))
+	printf("%i", ft_countmal(argv));
+	while (++i <= ft_countmal(argv) && push.a[i])
 		printf("push: %s\n", push.a[i]);
 	return (0);
 }

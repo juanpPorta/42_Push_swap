@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:56:47 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 16:33:11 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/17 17:36:57 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_push
 	int		xa;
 	int		yt;
 	int		xt;
+	int		**amod;
 
 }		t_push;
 
@@ -38,4 +39,6 @@ char	**ft_malloc(char **mal, int count);
 void	ft_save(t_push *push, char **argv, int argc);
 size_t	ft_takesize(char **argv);
 void	ft_free(char **matrix);
+void	ft_takeints(t_push *push);
+void	ft_init(t_push *push);
 #endif
