@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 17:36:07 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/23 20:21:28 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_init(t_push *push)
 	push->xa = 0;
 	push->yt = 0;
 	push->xt = 0;
+	push->a = 0;
 }
 
 void	ft_Stoa(char **argv, t_push *push)
@@ -34,27 +35,34 @@ void	ft_Stoa(char **argv, t_push *push)
 		push->yt = -1;
 		while (temp[++push->yt])
 		{
-			push->a[push->ya]
-				= ft_strdup(temp[push->yt]);
+			push->a[push->ya] = ft_strdup(temp[push->yt]);
 			push->ya += 1;
 		}
 		ft_free(temp);
 	}
+	push->a[push->ya] = NULL;
 }
 
 int	main(int argc, char **argv)
 {
 	int		i;
 	t_push	push;
+	int		contador;
 
 	if (argc <= 0)
 		return (0);
 	ft_save(&push, argv, argc);
 	ft_Stoa(argv, &push);
 	ft_takeints(&push);
-	push_swap(&push);
-	i = -1;
-	while (++i <= ft_countmal(argv) && push.a[i])
-		printf("push: %s\n", push.a[i]);
+	printf("hola\n");
+	/* push_swap(&push); */
+	i = 0;
+	contador = ft_countmal(argv);
+	/* while (i < push.countG && push.amod[i])
+	{
+		printf("push: %d\n", *push.amod[i]);
+		i++;
+	} */
+	ft_freeint(&push);
 	return (0);
 }

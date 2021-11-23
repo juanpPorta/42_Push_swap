@@ -1,4 +1,4 @@
-CC		= gcc 
+CC		= gcc -fsanitize=address -g3
 NAME	= push_swap
 MINILIB	= ./libft/libft.a
 HEADER	= push_swap.h
@@ -11,7 +11,7 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@make -C ./libft
-	gcc -g $(OBJS) $(MINILIB) -o $(NAME)
+	$(CC) -g $(OBJS) $(MINILIB) -o $(NAME)
 			
 .c.o:
 			$(CC) -g -I $(HEADER) -c $< -o $(<:.c=.o)

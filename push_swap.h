@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:56:47 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 19:27:29 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/23 20:21:52 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@
 typedef struct s_push
 {
 	char	**a;
-	char	**b;
 	int		ya;
 	int		xa;
 	int		yt;
 	int		xt;
 	int		**amod;
+	int		**bmod;
 	int		countG;
 
 }		t_push;
 
-void	ft_sa(t_push push);
-void	ft_sb(t_push push);
+void	ft_sa(t_push *push, int input);
+void	ft_sb(t_push *push, int input);
 char	**ft_checkargv(char **argv, t_push *push);
 int		ft_countmal(char **argv);
 char	**ft_malloc(char **mal, int count);
@@ -42,4 +42,7 @@ void	ft_free(char **matrix);
 void	ft_takeints(t_push *push);
 void	ft_init(t_push *push);
 void	push_swap(t_push *push);
+int		**ft_mallocint(int **mal, int count);
+int		ft_countmalint(t_push *push);
+void	ft_freeint(t_push *push);
 #endif

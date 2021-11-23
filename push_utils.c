@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:19:33 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/17 17:29:33 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/23 20:20:28 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ char	**ft_malloc(char **mal, int count)
 	int	y;
 	int	x;
 
-	y = -1;
-	mal = malloc(sizeof(char *) * count);
+	mal = ft_calloc(sizeof(char *), (count + 1));
 	return (mal);
 }
 
