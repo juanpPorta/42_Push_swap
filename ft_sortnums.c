@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:43:02 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/24 18:41:02 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/24 21:17:39 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	ft_sortint(t_push *push)
 
 	y = 0;
 	tmp = 0;
-	printf("pepe\n");
+	/* printf("pepe\n");
+	printf("el tamaño es%d\n", push->countG); */
 	while (y < push->countG - 1)
 	{
 		if (*push->intmod[y] > *push->intmod[y + 1] && *push->intmod[y + 1])
@@ -55,7 +56,7 @@ int	*ft_strdupint(int *s1)
 	s_dup = malloc(sizeof(int) * 1);
 	if (!s_dup)
 		return (0);
-	ft_memcpy(s_dup, s1, sizeof(int) + 1);
+	ft_memcpy(s_dup, s1, sizeof(int) * 1);
 	return (s_dup);
 }
 
