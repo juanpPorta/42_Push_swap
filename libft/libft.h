@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 13:58:58 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/04 16:07:37 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:23:53 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ t_list			*ft_lstlast(t_list *lst);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 t_list			*ft_lstnew(void *content);
 int				ft_lstsize(t_list *lst);
+void			ft_error(int num);
 /**/
 #endif

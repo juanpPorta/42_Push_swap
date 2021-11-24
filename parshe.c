@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:26:27 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/23 20:14:34 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/24 18:16:30 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,37 +29,26 @@ int	ft_countmalint(t_push *push)
 
 int	**ft_mallocint(int **mal, int count)
 {
-	int	y;
-	int	x;
-
 	mal = malloc(sizeof(int *) * count);
 	return (mal);
 }
 
 void	ft_saveint(t_push *push)
-{	
-	int	count;
-
-	count = 0;
-	count = ft_countmalint(push);
-	push->countG = count;
-	push->amod = ft_mallocint(push->amod, count);
+{
+	push->countG = ft_countmalint(push);
+	push->amod = ft_mallocint(push->amod, push->countG);
 }
 
 void	ft_takeints(t_push *push)
 {
 	int	y;
-	int	x;
 
-	y = -1;
 	ft_saveint(push);
 	y = 0;
 	while (y < push->countG)
 	{
-		x = 0;
 		push->amod[y] = malloc(sizeof(int) * 1);
-		push->amod[y][x] = ft_atoi(push->a[y]);
-		printf("hola: %d\n", *push->amod[y]);
+		*push->amod[y] = ft_atoi(push->a[y]);
 		y++;
 	}
 }

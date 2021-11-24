@@ -6,13 +6,13 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 19:45:37 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/19 15:27:41 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/24 15:11:33 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sb(t_push *push, int input)
+/* void	ft_sb(t_push *push, int input)
 {
 	int	*temp;
 
@@ -56,4 +56,4 @@ void	ft_pa(t_push *push)
 		push->amod[1] = temp;
 	}
 	printf("pa\n");
-}
+} */

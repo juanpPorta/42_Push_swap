@@ -6,11 +6,20 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:37:18 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/16 16:55:56 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:40:18 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_error(int num)
+{
+	if (num == 0)
+		printf("error de parametros \n");
+	else if (num == 2)
+		printf("los parametros tienen letras\n");
+	exit (0);
+}
 
 int	ft_atoi(char *str)
 {
@@ -33,9 +42,9 @@ int	ft_atoi(char *str)
 	{
 		r = (r * 10) + (str[i] - '0');
 		if (r > 2147483647 && s == 1)
-			return (-1);
+			ft_error(0);
 		if (r > 2147483648 && s == -1)
-			return (0);
+			ft_error(0);
 		i++;
 	}
 	return (r * s);
