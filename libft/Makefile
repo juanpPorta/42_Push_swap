@@ -1,5 +1,4 @@
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
 LIB1	= ar -rcs
 RM		= /bin/rm -f
 
@@ -32,7 +31,7 @@ bonus:		$(NAME) $(BONUS_O)
 			$(LIB1) $(NAME) $(BONUS_O)
 			
 .c.o:
-			$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $(<:.c=.o)
+			$(CC) -I $(INCLUDE) -c $< -o $(<:.c=.o)
 			
 clean:
 			$(RM) $(OBJS) $(BONUS_O)
