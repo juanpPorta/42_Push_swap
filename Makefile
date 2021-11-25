@@ -1,4 +1,4 @@
-CC		= gcc -Wall -Wextra -Werror
+CC		= gcc -fsanitize=address -g3
 NAME	= push_swap
 MINILIB	= ./libft/libft.a
 HEADER	= push_swap.h

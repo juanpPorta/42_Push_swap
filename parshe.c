@@ -6,11 +6,35 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:26:27 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/24 18:16:30 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/25 02:06:33 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_checnums(t_push *push)
+{
+	int	i;
+	int	y;
+	int	num;
+
+	y = 0;
+	i = 0;
+	while (y < push->countG)
+	{
+		num = 0;
+		while (i < push->countG - 1)
+		{
+			if (y == i)
+				i++;
+			if (*push->amod[y] == *push->amod[i])
+				ft_error(0);
+			i++;
+		}
+		i = 0;
+		y++;
+	}
+}
 
 int	ft_countmalint(t_push *push)
 {
@@ -51,4 +75,5 @@ void	ft_takeints(t_push *push)
 		*push->amod[y] = ft_atoi(push->a[y]);
 		y++;
 	}
+	ft_checnums(push);
 }

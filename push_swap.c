@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/24 21:17:53 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/25 02:06:17 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_checknums(t_push *push)
 			if (ft_isalpha(push->a[y][x]) == 1)
 			{
 				ft_free(push->a);
-				ft_error(2);
+				ft_error(1);
 			}
 			x++;
 		}
@@ -45,21 +45,23 @@ void	ft_Stoa(char **argv, t_push *push)
 {
 	char	**temp;
 	int		y;
+	int		ya;
+	int		yt;
 
 	y = 0;
-	push->ya = 0;
+	ya = 0;
 	while (argv[++y])
 	{
 		temp = ft_split(argv[y], ' ');
-		push->yt = -1;
-		while (temp[++push->yt])
+		yt = -1;
+		while (temp[++yt])
 		{
-			push->a[push->ya] = ft_strdup(temp[push->yt]);
-			push->ya += 1;
+			push->a[ya] = ft_strdup(temp[yt]);
+			ya += 1;
 		}
 		ft_free(temp);
 	}
-	push->a[push->ya] = NULL;
+	push->a[ya] = NULL;
 	ft_checknums(push);
 }
 
@@ -73,11 +75,12 @@ int	main(int argc, char **argv)
 	ft_save(&push, argv);
 	ft_Stoa(argv, &push);
 	ft_takeints(&push);
-	/* ft_buble(&push); */
+	ft_buble(&push);
 	i = 0;
 	while (i < push.countG)
 	{
-		printf("el numero de amod es: %d\n", *push.amod[i]);
+		printf("el numero %s, tiene la posicion %d:\n",
+			 push.a[i], *push.intmod[i]);
 		i++;
 	}
 	printf("el tamaño del array es: %d\n", push.countG);

@@ -6,86 +6,74 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:43:02 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/24 21:17:39 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/25 01:53:57 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_declare(t_push *push)
-{
-	push->minum = *push->intmod[0];
-	printf("este es el minimo: %d\n", push->minum);
-	push->maxnum = *push->intmod[push->countG - 1];
-	printf("este es el maximo: %d\n", push->maxnum);
-}
-
-void	ft_sortint(t_push *push)
+void	ft_mapeofin(t_push *push)
 {
 	int	y;
-	int	tmp;
 
 	y = 0;
-	tmp = 0;
-	/* printf("pepe\n");
-	printf("el tamaño es%d\n", push->countG); */
-	while (y < push->countG - 1)
+	while (y < push->countG)
 	{
-		if (*push->intmod[y] > *push->intmod[y + 1] && *push->intmod[y + 1])
-		{
-			tmp = *push->intmod[y];
-			*push->intmod[y] = *push->intmod[y + 1];
-			*push->intmod[y + 1] = tmp;
-		}
+		push->amod[y] = push->intmod[y];
 		y++;
 	}
-	y = 0;
-	while (y < push->countG - 1)
-	{
-		if (*push->intmod[y] < *push->intmod[y + 1])
-			y++;
-		else
-			ft_sortint(push);
-	}
 }
 
-int	*ft_strdupint(int *s1)
+void	ft_mapeo(t_push *push)
 {
-	int	*s_dup;
+	int	i;
+	int	y;
+	int	num;
 
-	s_dup = malloc(sizeof(int) * 1);
-	if (!s_dup)
-		return (0);
-	ft_memcpy(s_dup, s1, sizeof(int) * 1);
-	return (s_dup);
+	y = 0;
+	i = 0;
+	while (y < push->countG)
+	{
+		num = 0;
+		while (i < push->countG)
+		{
+			if (*push->amod[y] > *push->amod[i])
+				num++;
+			i++;
+		}
+		*push->intmod[y] = num;
+		i = 0;
+		y++;
+	}
+	ft_mapeofin(push);
 }
 
-void	ft_cpy(t_push *push)
+void	ft_malintmod(t_push *push)
 {
 	int	y;
-	int	x;
 
 	push->intmod = ft_mallocint(push->intmod, push->countG);
 	y = 0;
 	while (y < push->countG)
 	{
-		x = 0;
-		push->intmod[y] = ft_strdupint(push->amod[y]);
+		push->intmod[y] = malloc(sizeof(int) * 1);
 		y++;
 	}
-	ft_sortint(push);
+}
+
+void	ft_sortint(t_push *push)
+{
+	push->minum = 0;
+	push->maxnum = push->countG - 1;
 }
 
 void	ft_buble(t_push *push)
 {
 	int	y;
 
-	y = 0;
-	ft_cpy(push);
-	ft_declare(push);
-	while (y < push->countG)
-	{
-		printf("el numero de amod es: %d\n", *push->amod[y]);
-		y++;
-	}
+	ft_malintmod(push);
+	ft_mapeo(push);
+	ft_sortint(push);
+	printf("este es el minimo: %d\n", push->minum);
+	printf("este es el maximo: %d\n", push->maxnum);
 }
