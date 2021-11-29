@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 19:23:25 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/25 21:13:43 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/29 19:26:27 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ void	ft_initcounts(t_push *push)
 void	ft_saveint2(t_push *push)
 {	
 	int	y;
-	
+
 	push->bmod = ft_mallocint(push->amod, push->countG);
 	y = -1;
 	while (++y < push->countG)
+	{
 		push->bmod[y] = malloc(sizeof(int) * 1);
+		*push->bmod[y] = -1;
+	}
 	ft_initcounts(push);
 }
 

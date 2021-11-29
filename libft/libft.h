@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 13:58:58 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/24 16:23:53 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/29 18:13:57 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				*content;
 	struct s_list	*next;
 }t_list;
 
@@ -72,16 +72,16 @@ int				ft_putnbr_base(long long nbr, char *base);
 void			ft_putcharfinal(int final, int nb, int divisor);
 /**/
 /** lst bonus**/
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *));
-void			ft_lstiter(t_list *lst, void (*f)(void *));
-void			ft_lstclear(t_list **lst, void (*del)(void *));
-void			ft_lstdelone(t_list *lst, void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, int *(*f)(int *),
+					int (*del)(int *));
+void			ft_lstiter(t_list *lst, int (*f)(int *));
+void			ft_lstclear(t_list **lst, int (*del)(int *));
+void			ft_lstdelone(t_list *lst, int (*del)(int *));
 void			ft_lstadd_back(t_list **lst, t_list *new);
 t_list			*ft_lstlast(t_list *lst);
 void			ft_lstadd_front(t_list **lst, t_list *new);
-t_list			*ft_lstnew(void *content);
+t_list			*ft_lstnew(int *content);
 int				ft_lstsize(t_list *lst);
-void			ft_error(int num);
+int				ft_error(int num);
 /**/
 #endif

@@ -6,13 +6,13 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:37:18 by marvin            #+#    #+#             */
-/*   Updated: 2021/11/24 20:52:26 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/29 18:10:19 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_error(int num)
+int	ft_error(int num)
 {
 	if (num == 0)
 		printf("error de parametros \n");

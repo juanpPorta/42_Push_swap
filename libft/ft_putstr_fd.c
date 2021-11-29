@@ -6,13 +6,13 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 15:41:56 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/22 18:48:07 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/29 16:18:38 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
@@ -26,4 +26,3 @@
 		}
 	}
 }
- */

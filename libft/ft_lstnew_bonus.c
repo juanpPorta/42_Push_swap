@@ -6,13 +6,13 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 13:07:42 by marvin            #+#    #+#             */
-/*   Updated: 2021/09/22 20:13:15 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/29 18:42:45 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int *content)
 {
 	t_list	*listnew;
 

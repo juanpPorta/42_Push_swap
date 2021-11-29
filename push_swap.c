@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/25 22:13:24 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/29 19:36:34 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	t_push	push;
+	t_list	*aux;
 
 	if (argc <= 0)
 		return (0);
@@ -77,19 +78,43 @@ int	main(int argc, char **argv)
 	ft_takeints(&push);
 	ft_buble(&push);
 	push_swap(&push);
-	/* ft_sa(&push, 0); */
-	/* ft_pa(&push); */
+	ft_sa(&push, 0);
 	i = 0;
 	while (i < push.countG)
 	{
-		printf("el numero %s, es el numero %d\n",
+		printf("el numero %s es el numero %d\n",
+			 push.a[i], *push.amod[i]);
+		i++;
+	}
+	ft_sa(&push, 0);
+	i = 0;
+	while (i < push.countG)
+	{
+		printf("el numero %s es el numero %d\n",
+			 push.a[i], *push.amod[i]);
+		i++;
+	}
+	ft_pb(&push);
+	ft_pb(&push);
+	i = 0;
+	while (i < push.countbmod)
+	{
+		printf("bmod el numero %s, es el numero %d\n",
+			 push.a[i], *push.bmod[i]);
+		i++;
+	}
+	ft_pa(&push);
+	i = 0;
+	while (i < push.countamod)
+	{
+		printf("el numero %s es el numero %d\n",
 			 push.a[i], *push.amod[i]);
 		i++;
 	}
 	i = 0;
 	while (i < push.countbmod)
 	{
-		printf(" bmod el numero %s, es el numero %d\n",
+		printf("bmod el numero %s, es el numero %d\n",
 			 push.a[i], *push.bmod[i]);
 		i++;
 	}
