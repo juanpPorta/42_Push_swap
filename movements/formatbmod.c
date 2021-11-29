@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swaping.c                                          :+:      :+:    :+:   */
+/*   formatbmod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 19:23:25 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/19 15:30:39 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/25 21:13:43 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	ft_initcounts(t_push *push)
+{
+	push->countamod = push->countG;
+	push->countbmod = 0;
+}
+
 void	ft_saveint2(t_push *push)
 {	
-	int	count;
-
-	count = 0;
-	count = ft_countmalint(push);
-	push->countG = count;
-	push->bmod = ft_mallocint(push->amod, count);
+	int	y;
+	
+	push->bmod = ft_mallocint(push->amod, push->countG);
+	y = -1;
+	while (++y < push->countG)
+		push->bmod[y] = malloc(sizeof(int) * 1);
+	ft_initcounts(push);
 }
 
 void	push_swap(t_push *push)

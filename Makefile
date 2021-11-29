@@ -4,7 +4,7 @@ MINILIB	= ./libft/libft.a
 HEADER	= push_swap.h
 OBJS	= $(SRCS:.c=.o)
 SRCS	= push_swap.c ./movements/ft_s.c push_utils.c ft_free.c \
-			parshe.c ./movements/swaping.c ft_sortnums.c
+			parshe.c ./movements/formatbmod.c ft_sortnums.c
 
 all:	$(NAME)
 
@@ -20,7 +20,7 @@ clean:
 	rm -rf $(OBJS)
 	
 fclean:		clean
-			rm -rf $(NAME) 
+			rm -rf $(NAME) *.o
 			@make fclean -C ./libft
 
 re:			fclean all

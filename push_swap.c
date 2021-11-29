@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/25 02:06:17 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/25 22:13:24 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,21 @@ int	main(int argc, char **argv)
 	ft_Stoa(argv, &push);
 	ft_takeints(&push);
 	ft_buble(&push);
+	push_swap(&push);
+	/* ft_sa(&push, 0); */
+	/* ft_pa(&push); */
 	i = 0;
 	while (i < push.countG)
 	{
-		printf("el numero %s, tiene la posicion %d:\n",
-			 push.a[i], *push.intmod[i]);
+		printf("el numero %s, es el numero %d\n",
+			 push.a[i], *push.amod[i]);
+		i++;
+	}
+	i = 0;
+	while (i < push.countbmod)
+	{
+		printf(" bmod el numero %s, es el numero %d\n",
+			 push.a[i], *push.bmod[i]);
 		i++;
 	}
 	printf("el tamaño del array es: %d\n", push.countG);

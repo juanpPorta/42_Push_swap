@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:56:47 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/24 17:49:33 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/25 22:02:40 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ typedef struct s_push
 	int		countG;
 	int		minum;
 	int		maxnum;
+	int		countamod;
+	int		countbmod;
 
 }		t_push;
 
+void	ft_pa(t_push *push);
 void	ft_sa(t_push *push, int input);
 void	ft_sb(t_push *push, int input);
 char	**ft_checkargv(char **argv, t_push *push);
