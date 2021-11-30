@@ -10,7 +10,7 @@
 			"name": "Launch",
 			"program": "${workspaceFolder}/push_swap",
 			"args": [
-				"1","2","3","4"
+				"1","2","0"
 			],
 			"cwd": "${workspaceFolder}"
 		}
