@@ -6,24 +6,46 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:53:06 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/30 20:12:27 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/30 20:50:12 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	ft_primero(t_push *push, int input)
+{
+	if (input == 1)
+	{
+		while (*push->amod[0] != 0)
+			ft_ra(push, 0);
+	}
+	if (input == 0)
+	{
+		while (*push->amod[0] != 0)
+			ft_rra(push, 0);
+	}
+	if (*push->amod[0] < *push->amod[1] && *push->amod[1] < *push->amod[2]
+		&& *push->amod[2] < *push->amod[3])
+		return ;
+	ft_pb(push);
+	ft_threeshort(push);
+	ft_pa(push);
+}
+
 void	ft_fourhort(t_push *push)
 {
 	int	y;
-	
+
 	if (*push->amod[0] < *push->amod[1] && *push->amod[1] < *push->amod[2]
 		&& *push->amod[2] < *push->amod[3])
 		printf("ordenado\n");
 	y = 0;
 	while (*push->amod[y] != 0)
 		y++;
-	if (y < push->countG / 2)
-		
+	if (y <= push->countG / 2)
+		ft_primero(push, 1);
+	else
+		ft_primero(push, 0);
 }
 
 void	ft_threeshort(t_push *push)

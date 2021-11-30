@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:56:47 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/30 19:49:53 by jporta           ###   ########.fr       */
+/*   Updated: 2021/11/30 20:19:21 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_push
 
 }		t_push;
 
+void	ft_primero(t_push *push, int input);
 void	ft_threeshort(t_push *push);
 void	ft_check(t_push *push);
 void	ft_rrr(t_push *push);
