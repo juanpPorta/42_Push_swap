@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:56:47 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/30 20:19:21 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/01 20:01:32 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,6 @@ int		**ft_mallocint(int **mal, int count);
 int		ft_countmalint(t_push *push);
 void	ft_freeint(int **matrix);
 void	ft_buble(t_push *push);
+void	ft_sortint(t_push *push);
+void	ft_check_sort(t_push *push);
 #endif

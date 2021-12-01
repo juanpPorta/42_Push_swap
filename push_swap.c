@@ -6,17 +6,32 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/11/30 16:20:40 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/01 21:11:48 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_init(t_push *push)
+void	ft_checkminus(t_push *push)
 {
-	push->ya = 0;
-	push->yt = 0;
-	push->a = 0;
+	int	y;
+	int	x;
+	int	count;
+
+	y = -1;
+	while (push->a[++y])
+	{
+		x = 0;
+		count = 0;
+		while (push->a[y][x])
+		{
+			if (push->a[y][x] == '-' || push->a[y][x] == '+')
+				count++;
+			x++;
+		}
+		if (count > 1)
+			ft_error(0);
+	}
 }
 
 void	ft_checknums(t_push *push)
@@ -33,8 +48,14 @@ void	ft_checknums(t_push *push)
 			if (ft_isalpha(push->a[y][x]) == 1)
 			{
 				ft_free(push->a);
-				ft_error(1);
+				ft_error(0);
 			}
+			if (ft_isdigit(push->a[y][x]) == 0)
+			{
+				ft_free(push->a);
+				ft_error(0);
+			}
+			ft_checkminus(push);
 			x++;
 		}
 		y++;
@@ -52,6 +73,8 @@ void	ft_Stoa(char **argv, t_push *push)
 	ya = 0;
 	while (argv[++y])
 	{
+		if (ft_strlen(argv[y]) == 0)
+			ft_error(0);
 		temp = ft_split(argv[y], ' ');
 		yt = -1;
 		while (temp[++yt])
@@ -71,7 +94,7 @@ int	main(int argc, char **argv)
 	t_push	push;
 	t_list	*aux;
 
-	if (argc <= 0)
+	if (argc <= 1)
 		return (0);
 	ft_save(&push, argv);
 	ft_Stoa(argv, &push);
@@ -80,11 +103,11 @@ int	main(int argc, char **argv)
 	push_swap(&push);
 	ft_check(&push);
 	i = 0;
-	while (i < push.countG)
+	/* while (i < push.countG)
 	{
 		printf("este es el array ordenado: %d\n", *push.amod[i]);
 		i++;
 	}
-	printf("el tamaño del array es: %d\n", push.countG);
+	printf("el tamaño del array es: %d\n", push.countG); */
 	return (0);
 }

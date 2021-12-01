@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:37:18 by marvin            #+#    #+#             */
-/*   Updated: 2021/11/29 18:10:19 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/01 19:53:58 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int	ft_error(int num)
 {
 	if (num == 0)
-		printf("error de parametros \n");
-	else if (num == 2)
-		printf("los parametros tienen letras\n");
+		printf("Error\n");
 	exit (0);
 }
 
