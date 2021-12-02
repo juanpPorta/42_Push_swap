@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 06:58:03 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/01 22:26:50 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/02 12:12:18 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,4 @@ void	ft_buble(t_push *push)
 	ft_malintmod(push);
 	ft_mapeo(push);
 	ft_sortint(push);
-	/* printf("este es el minimo: %d\n", push->minum);
-	printf("este es el maximo: %d\n", push->maxnum); */
 }

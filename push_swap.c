@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/02 04:45:49 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/02 12:12:11 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,11 +103,5 @@ int	main(int argc, char **argv)
 	push_swap(&push);
 	ft_check(&push);
 	i = 0;
-	/* while (i < push.countG)
-	{
-		printf("este es el array ordenado: %d\n", *push.amod[i]);
-		i++;
-	}
-	printf("el tamaño del array es: %d\n", push.countG); */
 	return (0);
 }

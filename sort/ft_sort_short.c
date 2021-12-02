@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 18:29:53 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/01 22:17:54 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/02 11:24:26 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,17 +101,17 @@ void	ft_check_sort(t_push *push)
 {
 	if (push->countG == 1)
 		return ;
-	if (push->countG == 2)
+	else if (push->countG == 2)
 	{
 		if (*push->amod[0] > *push->amod[1])
 			ft_sa(push, 0);
 		else
 			return ;
 	}	
-	if (push->countG == 3)
+	else if (push->countG == 3)
 		ft_threeshort(push);
-	if (push->countG == 4)
+	else if (push->countG == 4)
 		ft_fourhort(push);
-	if (push->countG == 5)
+	else if (push->countG == 5)
 		ft_fivehort(push);
 }

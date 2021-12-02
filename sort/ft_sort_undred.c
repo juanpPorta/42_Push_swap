@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 21:52:44 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/02 04:13:45 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/02 11:44:30 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,7 @@ void	ft_calc(t_push *push, int count)
 
 void	ft_sort_medium(t_push *push)
 {
-	int	y;
 	int	count;
-	int	w;
 	int	yx;
 	int	xD;
 
@@ -81,15 +79,11 @@ void	ft_sort_medium(t_push *push)
 	{
 		while (push->countamod > push->countG - (count + 1))
 		{
-			y = 0;
-			w = push->countamod - 1;
-			while (*push->amod[y] > count)
-				y++;
-			yx = *push->amod[y];
-			while (*push->amod[w] > count)
-				w--;
-			xD = *push->amod[w];
-			if (y < w)
+			push->y = ft_me_corto_las_pelotas(push, count, 1);
+			push->w = ft_me_corto_las_pelotas(push, count, 0);
+			yx = *push->amod[push->y];
+			xD = *push->amod[push->w];
+			if (push->y < push->w)
 				while (*push->amod[0] != yx)
 					ft_ra(push, 0);
 			else
@@ -102,33 +96,30 @@ void	ft_sort_medium(t_push *push)
 	ft_recolocate(push);
 }
 
-/* void	ft_sort_max(t_push *push)
+void	ft_sort_max(t_push *push)
 {
-	int	y;
 	int	count;
-	int	w;
+	int	yx;
+	int	xD;
 
-	count = 19;
+	count = 49;
 	while (push->countamod != 0)
 	{
-		y = 0;
-		w = push->countamod - 1;
-		while (*push->amod[y] >= count)
-			y++;
-		y = *push->amod[y];
-		while (*push->amod[w] >= count)
-			w--;
-		w = *push->amod[w];
-		if (y < push->countamod - w)
-			while (*push->amod[0] != y)
-				ft_ra(push, 0);
-		else
-			while (*push->amod[0] != w)
-				ft_rra(push, 0);
-		ft_pb(push);
-		count += 20;
+		while (push->countamod > push->countG - (count + 1))
+		{
+			push->y = ft_me_corto_las_pelotas(push, count, 1);
+			push->w = ft_me_corto_las_pelotas(push, count, 0);
+			yx = *push->amod[push->y];
+			xD = *push->amod[push->w];
+			if (push->y < push->w)
+				while (*push->amod[0] != yx)
+					ft_ra(push, 0);
+			else
+				while (*push->amod[0] != xD)
+					ft_rra(push, 0);
+			ft_calc(push, count);
+		}
+		count += 50;
 	}
-	while (push->countbmod != 0)
-		ft_pa(push);
+	ft_recolocate(push);
 }
- */
