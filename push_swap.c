@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:58:42 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/02 12:12:11 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/02 13:24:35 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	t_push	push;
-	t_list	*aux;
 
 	if (argc <= 1)
 		return (0);

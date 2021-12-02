@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 06:58:03 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/02 12:12:18 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/02 13:24:49 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ void	ft_sortint(t_push *push)
 
 void	ft_buble(t_push *push)
 {
-	int	y;
-
 	ft_malintmod(push);
 	ft_mapeo(push);
 	ft_sortint(push);

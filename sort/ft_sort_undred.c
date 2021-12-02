@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 21:52:44 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/02 13:20:25 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/02 13:25:12 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	ft_primero2(t_push *push, int input)
 void	ft_recolocate(t_push *push)
 {
 	int	y;
-	int	count;
 	int	w;
 
 	push->maxnum = push->countbmod - 1;
