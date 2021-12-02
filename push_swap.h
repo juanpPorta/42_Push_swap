@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:56:47 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/01 20:01:32 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/02 01:59:41 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,6 @@ void	ft_freeint(int **matrix);
 void	ft_buble(t_push *push);
 void	ft_sortint(t_push *push);
 void	ft_check_sort(t_push *push);
+void	ft_sort_medium(t_push *push);
+void	ft_sort_max(t_push *push);
 #endif

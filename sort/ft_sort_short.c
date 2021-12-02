@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 18:29:53 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/01 20:07:09 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/01 22:17:54 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ void	ft_primero(t_push *push, int input)
 		ft_pb(push);
 		push->minum = push->countG - push->countamod;
 	}
-	if (*push->amod[0] < *push->amod[1] && *push->amod[1] < *push->amod[2]
-		&& *push->amod[2] < *push->amod[3])
-		return ;
 }
 
 void	ft_fivehort(t_push *push)
