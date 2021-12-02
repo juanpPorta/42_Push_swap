@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 21:52:44 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/02 11:44:30 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/02 13:20:25 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_recolocate(t_push *push)
 			y++;
 		while (*push->bmod[w] != push->maxnum)
 			w--;
-		if (y < push->countbmod - w)
+		if (y < (push->countbmod - w))
 			ft_primero2(push, 1);
 		else
 			ft_primero2(push, 0);
@@ -74,7 +74,7 @@ void	ft_sort_medium(t_push *push)
 	int	yx;
 	int	xD;
 
-	count = 19;
+	count = 24;
 	while (push->countamod != 0)
 	{
 		while (push->countamod > push->countG - (count + 1))
@@ -83,7 +83,7 @@ void	ft_sort_medium(t_push *push)
 			push->w = ft_me_corto_las_pelotas(push, count, 0);
 			yx = *push->amod[push->y];
 			xD = *push->amod[push->w];
-			if (push->y < push->w)
+			if (push->y < (push->countG - push->w))
 				while (*push->amod[0] != yx)
 					ft_ra(push, 0);
 			else
@@ -91,7 +91,7 @@ void	ft_sort_medium(t_push *push)
 					ft_rra(push, 0);
 			ft_calc(push, count);
 		}
-		count += 20;
+		count += 25;
 	}
 	ft_recolocate(push);
 }
@@ -111,7 +111,7 @@ void	ft_sort_max(t_push *push)
 			push->w = ft_me_corto_las_pelotas(push, count, 0);
 			yx = *push->amod[push->y];
 			xD = *push->amod[push->w];
-			if (push->y < push->w)
+			if (push->y < (push->countG - push->w))
 				while (*push->amod[0] != yx)
 					ft_ra(push, 0);
 			else
