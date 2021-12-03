@@ -4,3 +4,5 @@ checker_Mac
 texto.txt
 *.a
 texto.txt
+.DS_Store
+.vscode
