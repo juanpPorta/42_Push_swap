@@ -17,9 +17,9 @@ void	ft_mapeofin(t_push *push)
 	int	y;
 
 	y = 0;
-	while (y < push->countG)
+	while (y < push->countg)
 	{
-		push->amod[y] = push->intmod[y];
+		*push->amod[y] = *push->intmod[y];
 		y++;
 	}
 }
@@ -32,10 +32,10 @@ void	ft_mapeo(t_push *push)
 
 	y = 0;
 	i = 0;
-	while (y < push->countG)
+	while (y < push->countg)
 	{
 		num = 0;
-		while (i < push->countG)
+		while (i < push->countg)
 		{
 			if (*push->amod[y] > *push->amod[i])
 				num++;
@@ -52,9 +52,9 @@ void	ft_malintmod(t_push *push)
 {
 	int	y;
 
-	push->intmod = ft_mallocint(push->intmod, push->countG);
+	push->intmod = calloc(sizeof(int *), push->countg + 1);
 	y = 0;
-	while (y < push->countG)
+	while (y < push->countg)
 	{
 		push->intmod[y] = malloc(sizeof(int) * 1);
 		y++;
@@ -64,7 +64,7 @@ void	ft_malintmod(t_push *push)
 void	ft_sortint(t_push *push)
 {
 	push->minum = 0;
-	push->maxnum = push->countG - 1;
+	push->maxnum = push->countg - 1;
 }
 
 void	ft_buble(t_push *push)

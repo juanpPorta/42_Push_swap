@@ -76,13 +76,13 @@ void	ft_sort_medium(t_push *push)
 	count = 24;
 	while (push->countamod != 0)
 	{
-		while (push->countamod > push->countG - (count + 1))
+		while (push->countamod > push->countg - (count + 1))
 		{
 			push->y = ft_me_corto_las_pelotas(push, count, 1);
 			push->w = ft_me_corto_las_pelotas(push, count, 0);
 			yx = *push->amod[push->y];
 			xD = *push->amod[push->w];
-			if (push->y < (push->countG - push->w))
+			if (push->y < (push->countg - push->w))
 				while (*push->amod[0] != yx)
 					ft_ra(push, 0);
 			else
@@ -104,13 +104,13 @@ void	ft_sort_max(t_push *push)
 	count = 49;
 	while (push->countamod != 0)
 	{
-		while (push->countamod > push->countG - (count + 1))
+		while (push->countamod > push->countg - (count + 1))
 		{
 			push->y = ft_me_corto_las_pelotas(push, count, 1);
 			push->w = ft_me_corto_las_pelotas(push, count, 0);
 			yx = *push->amod[push->y];
 			xD = *push->amod[push->w];
-			if (push->y < (push->countG - push->w))
+			if (push->y < (push->countg - push->w))
 				while (*push->amod[0] != yx)
 					ft_ra(push, 0);
 			else

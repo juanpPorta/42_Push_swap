@@ -26,7 +26,7 @@ typedef struct s_push
 	int		**amod;
 	int		**bmod;
 	int		**intmod;
-	int		countG;
+	int		countg;
 	int		minum;
 	int		maxnum;
 	int		countamod;
@@ -60,7 +60,6 @@ void	ft_free(char **matrix);
 void	ft_takeints(t_push *push);
 void	ft_init(t_push *push);
 void	push_swap(t_push *push);
-int		**ft_mallocint(int **mal, int count);
 int		ft_countmalint(t_push *push);
 void	ft_freeint(int **matrix);
 void	ft_buble(t_push *push);

@@ -62,7 +62,7 @@ void	ft_checknums(t_push *push)
 	}
 }
 
-void	ft_Stoa(char **argv, t_push *push)
+void	ft_stoa(char **argv, t_push *push)
 {
 	char	**temp;
 	int		y;
@@ -84,23 +84,26 @@ void	ft_Stoa(char **argv, t_push *push)
 		}
 		ft_free(temp);
 	}
-	push->a[ya] = NULL;
 	ft_checknums(push);
 }
 
 int	main(int argc, char **argv)
 {
-	int		i;
-	t_push	push;
+	t_push	*push;
 
+	push = malloc(sizeof(t_push));
 	if (argc <= 1)
 		return (0);
-	ft_save(&push, argv);
-	ft_Stoa(argv, &push);
-	ft_takeints(&push);
-	ft_buble(&push);
-	push_swap(&push);
-	ft_check(&push);
-	i = 0;
+	ft_save(push, argv);
+	ft_stoa(argv, push);
+	ft_takeints(push);
+	ft_buble(push);
+	push_swap(push);
+	ft_check(push);
+	ft_free(push->a);
+	ft_freeint(push->amod);
+	ft_freeint(push->bmod);
+	ft_freeint(push->intmod);
+	free(push);
 	return (0);
 }

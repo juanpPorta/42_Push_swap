@@ -14,19 +14,19 @@
 
 void	ft_initcounts(t_push *push)
 {
-	push->countamod = push->countG;
+	push->countamod = push->countg;
 	push->countbmod = 0;
 }
 
 void	ft_saveint2(t_push *push)
-{	
+{
 	int	y;
 
-	push->bmod = ft_mallocint(push->amod, push->countG);
+	push->bmod = ft_calloc(sizeof(int *), push->countg + 1);
 	y = -1;
-	while (++y < push->countG)
+	while (++y < push->countg)
 	{
-		push->bmod[y] = malloc(sizeof(int) * 1);
+		push->bmod[y] = malloc(sizeof(int));
 		*push->bmod[y] = -1;
 	}
 	ft_initcounts(push);
