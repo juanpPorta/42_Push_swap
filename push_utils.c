@@ -24,7 +24,7 @@ int	ft_countmal(char **argv)
 	{
 		x = -1;
 		while (argv[y][++x])
-		{	
+		{
 			if (argv[y][x] != ' ' && argv[y][x] != '\0')
 				count++;
 		}
@@ -32,19 +32,13 @@ int	ft_countmal(char **argv)
 	return (count);
 }
 
-char	**ft_malloc(char **mal, int count)
-{
-	mal = ft_calloc(sizeof(char *), (count + 1));
-	return (mal);
-}
-
 void	ft_save(t_push *push, char **argv)
-{	
+{
 	int	count;
 
 	count = 0;
 	count = ft_countmal(argv);
-	push->a = ft_malloc(push->a, count);
+	push->a = ft_calloc(sizeof(char *), count + 1);
 }
 
 size_t	ft_takesize(char **argv)

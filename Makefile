@@ -1,7 +1,7 @@
-CC		= gcc -Wall -Wextra -Werror
+CC		= gcc -Wall -Wextra -Werror -fsanitize=address -g
 NAME	= push_swap
 MINILIB	= ./libft/libft.a
-HEADER	= push_swap.h
+HEADER	= .
 OBJS	= $(SRCS:.c=.o)
 SRCS	= push_swap.c ./movements/ft_s.c push_utils.c ft_free.c \
 			parshe.c ./movements/formatbmod.c ft_sortnums.c ./movements/ft_p.c \
@@ -14,13 +14,13 @@ all:	$(NAME)
 $(NAME):	$(OBJS)
 	@make -C ./libft
 	$(CC) $(OBJS) $(MINILIB) -o $(NAME)
-			
+
 .c.o:
 			$(CC) -g -I $(HEADER) -c $< -o $(<:.c=.o)
-			
-clean:		
+
+clean:
 	rm -rf $(OBJS)
-	
+
 fclean:		clean
 			rm -rf $(NAME) *.o
 			@make fclean -C ./libft

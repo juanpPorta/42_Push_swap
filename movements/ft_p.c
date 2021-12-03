@@ -14,10 +14,8 @@
 
 void	ft_pa(t_push *push)
 {
-	int		*temp;
 	int		y;
 
-	temp = 0;
 	if (push->countbmod > 0)
 	{
 		if (*push->amod[0] == -1)
@@ -41,10 +39,8 @@ void	ft_pa(t_push *push)
 
 void	ft_pb(t_push *push)
 {
-	int		*temp;
 	int		y;
 
-	temp = 0;
 	if (push->countamod > 0)
 	{
 		if (*push->bmod[0] == -1)

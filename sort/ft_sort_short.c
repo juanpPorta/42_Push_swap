@@ -19,14 +19,14 @@ void	ft_primero(t_push *push, int input)
 		while (*push->amod[0] != push->minum)
 			ft_ra(push, 0);
 		ft_pb(push);
-		push->minum = push->countG - push->countamod;
+		push->minum = push->countg - push->countamod;
 	}
 	if (input == 0)
 	{
 		while (*push->amod[0] != push->minum)
 			ft_rra(push, 0);
 		ft_pb(push);
-		push->minum = push->countG - push->countamod;
+		push->minum = push->countg - push->countamod;
 	}
 }
 
@@ -42,7 +42,7 @@ void	ft_fivehort(t_push *push)
 		y++;
 	while (push->countamod != 3)
 	{
-		if (y <= push->countG / 2)
+		if (y <= push->countg / 2)
 			ft_primero(push, 1);
 		else
 			ft_primero(push, 0);
@@ -62,7 +62,7 @@ void	ft_fourhort(t_push *push)
 	y = 0;
 	while (*push->amod[y] != 0)
 		y++;
-	if (y <= push->countG / 2)
+	if (y <= push->countg / 2)
 		ft_primero(push, 1);
 	else
 		ft_primero(push, 0);
@@ -99,19 +99,19 @@ void	ft_threeshort(t_push *push)
 
 void	ft_check_sort(t_push *push)
 {
-	if (push->countG == 1)
+	if (push->countg == 1)
 		return ;
-	else if (push->countG == 2)
+	else if (push->countg == 2)
 	{
 		if (*push->amod[0] > *push->amod[1])
 			ft_sa(push, 0);
 		else
 			return ;
-	}	
-	else if (push->countG == 3)
+	}
+	else if (push->countg == 3)
 		ft_threeshort(push);
-	else if (push->countG == 4)
+	else if (push->countg == 4)
 		ft_fourhort(push);
-	else if (push->countG == 5)
+	else if (push->countg == 5)
 		ft_fivehort(push);
 }

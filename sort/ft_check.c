@@ -35,10 +35,10 @@ int	ft_me_corto_las_pelotas(t_push *push, int count, int input)
 
 void	ft_check(t_push *push)
 {
-	if (push->countG <= 5)
+	if (push->countg <= 5)
 		ft_check_sort(push);
-	if (push->countG == 100)
+	if (push->countg == 100)
 		ft_sort_medium(push);
-	if (push->countG == 500)
+	if (push->countg == 500)
 		ft_sort_max(push);
 }

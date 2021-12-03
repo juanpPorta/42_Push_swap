@@ -16,14 +16,12 @@ void	ft_checnums(t_push *push)
 {
 	int	i;
 	int	y;
-	int	num;
 
 	y = 0;
 	i = 0;
-	while (y < push->countG)
+	while (y < push->countg)
 	{
-		num = 0;
-		while (i < push->countG - 1)
+		while (i < push->countg - 1)
 		{
 			if (y == i)
 				i++;
@@ -51,16 +49,10 @@ int	ft_countmalint(t_push *push)
 	return (count);
 }
 
-int	**ft_mallocint(int **mal, int count)
-{
-	mal = malloc(sizeof(int *) * count);
-	return (mal);
-}
-
 void	ft_saveint(t_push *push)
 {
-	push->countG = ft_countmalint(push);
-	push->amod = ft_mallocint(push->amod, push->countG);
+	push->countg = ft_countmalint(push);
+	push->amod = calloc(sizeof(int *), push->countg + 1);
 }
 
 void	ft_takeints(t_push *push)
@@ -69,9 +61,9 @@ void	ft_takeints(t_push *push)
 
 	ft_saveint(push);
 	y = 0;
-	while (y < push->countG)
+	while (y < push->countg)
 	{
-		push->amod[y] = malloc(sizeof(int) * 1);
+		push->amod[y] = malloc(sizeof(int));
 		*push->amod[y] = ft_atoi(push->a[y]);
 		y++;
 	}
