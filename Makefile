@@ -1,4 +1,4 @@
-CC		= gcc -Wall -Wextra -Werror -fsanitize=address -g
+CC		= gcc -Wall -Wextra -Werror
 NAME	= push_swap
 MINILIB	= ./libft/libft.a
 HEADER	= .
@@ -16,7 +16,7 @@ $(NAME):	$(OBJS)
 	$(CC) $(OBJS) $(MINILIB) -o $(NAME)
 
 .c.o:
-			$(CC) -g -I $(HEADER) -c $< -o $(<:.c=.o)
+			$(CC) -I $(HEADER) -c $< -o $(<:.c=.o)
 
 clean:
 	rm -rf $(OBJS)

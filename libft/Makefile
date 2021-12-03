@@ -1,4 +1,4 @@
-CC		= gcc -fsanitize=address
+CC		= gcc 
 LIB1	= ar -rcs
 RM		= /bin/rm -f
 
