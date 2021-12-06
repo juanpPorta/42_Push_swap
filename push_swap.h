@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:56:47 by jporta            #+#    #+#             */
-/*   Updated: 2021/12/02 11:42:44 by jporta           ###   ########.fr       */
+/*   Updated: 2021/12/06 17:34:03 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ typedef struct s_push
 	int		maxnum;
 	int		countamod;
 	int		countbmod;
-	t_list	*stacka;
-	t_list	*stackb;
 	int		w;
 	int		y;
 
@@ -67,5 +65,5 @@ void	ft_sortint(t_push *push);
 void	ft_check_sort(t_push *push);
 void	ft_sort_medium(t_push *push);
 void	ft_sort_max(t_push *push);
-int		ft_me_corto_las_pelotas(t_push *push, int count, int input);
+int		ft_fin(t_push *push, int count, int input);
 #endif
