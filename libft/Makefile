@@ -1,4 +1,4 @@
-CC		= gcc 
+CC		= gcc -Wall -Wextra -Werror
 LIB1	= ar -rcs
 RM		= /bin/rm -f
 

@@ -1,4 +1,4 @@
-CC		= gcc -Wall -Wextra -Werror -g
+CC		= gcc -Wall -Wextra -Werror
 NAME	= push_swap
 MINILIB	= ./libft/libft.a
 HEADER	= .
